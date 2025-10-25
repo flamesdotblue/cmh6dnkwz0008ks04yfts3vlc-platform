@@ -54,8 +54,8 @@ const ReelCard = ({ src, title, tag }) => {
   return (
     <motion.div
       whileHover={{ y: -6 }}
-      className="group relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md">
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-b from-transparent via-transparent to-black/60 pointer-events-none" />
+      className="group relative rounded-2xl overflow-hidden bg-white/5 border border-red-500/20 backdrop-blur-md">
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-b from-transparent via-transparent to-black/70 pointer-events-none" />
       <video
         ref={videoRef}
         src={src}
@@ -67,19 +67,22 @@ const ReelCard = ({ src, title, tag }) => {
       />
       <div className="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between">
         <div>
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs bg-white/10 border border-white/10 backdrop-blur-md">
-            <Film className="h-3.5 w-3.5" />
-            <span>{tag}</span>
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs bg-black/50 border border-red-500/30 backdrop-blur-md">
+            <Film className="h-3.5 w-3.5 text-red-400" />
+            <span className="text-white">{tag}</span>
           </div>
           <h3 className="mt-2 text-lg font-semibold drop-shadow-lg">{title}</h3>
         </div>
-        <div className="hidden sm:flex items-center gap-1 text-amber-300">
+        <div className="hidden sm:flex items-center gap-1 text-red-400">
           <Star className="h-4 w-4 fill-current" />
           <Star className="h-4 w-4 fill-current" />
           <Star className="h-4 w-4 fill-current" />
         </div>
       </div>
-      <div className="absolute -inset-px rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition duration-500" style={{ background: 'conic-gradient(from 180deg at 50% 50%, rgba(244,63,94,0.6), rgba(217,70,239,0.6), rgba(124,58,237,0.6), rgba(244,63,94,0.6))' }} />
+      <div
+        className="absolute -inset-px rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition duration-500"
+        style={{ background: 'conic-gradient(from 180deg at 50% 50%, rgba(239,68,68,0.65), rgba(185,28,28,0.65), rgba(127,29,29,0.6), rgba(239,68,68,0.65))' }}
+      />
     </motion.div>
   );
 };
@@ -92,7 +95,7 @@ const Services = () => {
     },
     {
       title: 'Trend Mapping',
-      desc: 'Weekly strategy sprints matching trends with your brand voice for consistent viral momentum.',
+      desc: 'Weekly strategy sprints matching trends with your brand voice for consistent momentum.',
     },
     {
       title: 'Motion + Sound',
@@ -102,10 +105,10 @@ const Services = () => {
 
   return (
     <section id="services" className="relative py-20">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(244,63,94,0.15)_0%,rgba(0,0,0,0)_60%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.12)_0%,rgba(0,0,0,0)_60%)]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
-          <h2 className="text-2xl sm:text-4xl font-bold">Services built for the For You Page</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold">Built to dominate the feed</h2>
           <span className="text-white/60 text-sm">Fast. Iterative. Data-informed.</span>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -116,7 +119,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: i * 0.05 }}
-              className="rounded-2xl p-6 bg-white/5 border border-white/10 backdrop-blur-md">
+              className="rounded-2xl p-6 bg-white/5 border border-red-500/20">
               <h3 className="text-xl font-semibold">{s.title}</h3>
               <p className="mt-2 text-white/80 text-sm">{s.desc}</p>
             </motion.div>
@@ -131,14 +134,14 @@ const ReelShowcase = () => {
   return (
     <>
       <section id="reels" className="relative py-20">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom_right,rgba(217,70,239,0.12)_0%,rgba(0,0,0,0)_55%)]" />
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom_right,rgba(239,68,68,0.12)_0%,rgba(0,0,0,0)_55%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <h2 className="text-2xl sm:text-4xl font-bold">Our Reels hit different</h2>
-              <p className="mt-2 text-white/70">Swipe through a few styles we deliver every week for brands and creators.</p>
+              <h2 className="text-2xl sm:text-4xl font-bold">Reels that burn into memory</h2>
+              <p className="mt-2 text-white/70">Swipe through styles we deliver weekly for brands and creators.</p>
             </div>
-            <a href="#contact" className="hidden sm:inline-flex px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition">Start your reel</a>
+            <a href="#contact" className="hidden sm:inline-flex px-4 py-2 rounded-full bg-red-500 text-white text-sm font-medium hover:bg-red-400 transition">Start your reel</a>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -151,16 +154,16 @@ const ReelShowcase = () => {
       <Services />
       <section id="contact" className="relative py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-2xl sm:text-4xl font-bold">Ready to make the feed stop scrolling?</h3>
+          <h3 className="text-2xl sm:text-4xl font-bold">Ready to ignite your brand?</h3>
           <p className="mt-3 text-white/75">Tell us your goal. We’ll pitch 3 concepts and deliver your first reel in 5 days.</p>
           <form className="mt-8 grid gap-4 text-left">
             <div className="grid sm:grid-cols-2 gap-4">
-              <input required name="name" placeholder="Your name" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-white/10 outline-none focus:border-white/30" />
-              <input required type="email" name="email" placeholder="Email" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-white/10 outline-none focus:border-white/30" />
+              <input required name="name" placeholder="Your name" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-red-500/20 outline-none focus:border-red-500/50" />
+              <input required type="email" name="email" placeholder="Email" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-red-500/20 outline-none focus:border-red-500/50" />
             </div>
-            <input name="brand" placeholder="Brand / Handle" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-white/10 outline-none focus:border-white/30" />
-            <textarea name="brief" placeholder="What are you trying to achieve?" rows="4" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-white/10 outline-none focus:border-white/30" />
-            <button type="submit" className="mt-2 inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold hover:bg-white/90 transition">
+            <input name="brand" placeholder="Brand / Handle" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-red-500/20 outline-none focus:border-red-500/50" />
+            <textarea name="brief" placeholder="What are you trying to achieve?" rows="4" className="w-full rounded-xl px-4 py-3 bg-white/5 border border-red-500/20 outline-none focus:border-red-500/50" />
+            <button type="submit" className="mt-2 inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full bg-red-500 text-white font-semibold hover:bg-red-400 transition">
               <Film className="h-4 w-4" />
               Get Concepts
             </button>
